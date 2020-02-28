@@ -10,8 +10,8 @@ set(CMAKE_AUTOUIC ON)
 include_directories(cmake-build-debug/crapsStarter_autogen/include)
 
 # Tell cmake where Qt is located
-set(Qt5_DIR "/usr/local/Cellar/qt/5.14.1/lib/cmake/Qt5")
-set(QT_INCLUDES "/usr/local/Cellar/qt/5.14.1/include")
+set(Qt5_DIR "/Users/ortiz/Applications/5.14.1/clang_64/lib/cmake/Qt5")
+set(QT_INCLUDES "/Users/ortiz/Applications/5.14.1/clang_64/include")
 MESSAGE("QT_INCLUDES: ${QT_INCLUDES}")
 
 # Include a library search using find_package()
