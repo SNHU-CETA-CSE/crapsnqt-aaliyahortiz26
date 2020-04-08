@@ -10,20 +10,35 @@
 #include <QMainWindow>
 
 class CrapsMainWindow : public QMainWindow, private Ui::CrapsMainWindow {
-    Q_OBJECT
+Q_OBJECT
 
-    public:
-        CrapsMainWindow(QMainWindow *parent = nullptr);
-        void printStringRep();
-        void updateUI();
+public:
+    CrapsMainWindow(QMainWindow *parent = nullptr);
+    void printStringRep();
+    void updateUI();
 
-    private:
-        Die die1, die2;
-        bool firstRoll = true;
-        int winsCount = 0;
+private:
+    Die die1, die2;
+    bool firstRoll;
+    int winsCount;
+    int lossesCount;
+    float currentBankValue;
+    int currentBet;
+    int previousRoll ;
+    std::string statusMessage;
+    const float payouts[13];
 
-    public Q_SLOTS:
-        void rollButtonClickedHandler();
+    std::tuple<bool, float> playFirstRoll(int rollValue, float currentBank, int currentBet);
+    std::tuple<bool, float> playSecondRoll(int rollValue, int previousRoll, float currentBank, int currentBet);
+    float processWin(int rollValue, int rollNumber, float currentBank, float currentBet);
+    float processLoss(int rollValue, int rollNumber, float currentBank, float currentBet);
+    float calculateCurrentBank(int rollValue, int rollNumber, float currentBank, float currentBet, bool wonBet);
+    int processBet(float currentBank);
+    void setupGame();
+
+public Q_SLOTS:
+    void rollButtonClickedHandler();
+
 };
 
 #endif //CRAPSSTARTER_CRAPS_H

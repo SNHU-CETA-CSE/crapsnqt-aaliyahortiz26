@@ -26,3 +26,4 @@ add_executable(crapsStarter ${SOURCE_FILES})
 target_link_libraries(${PROJECT_NAME} Qt5::Core)
 target_link_libraries(${PROJECT_NAME} Qt5::Gui)
 target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
+
