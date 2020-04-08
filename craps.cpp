@@ -47,6 +47,9 @@ void CrapsMainWindow::updateUI() {
     snprintf(outputString, sizeof(outputString), "%.0f", winsCount);
     winsValueUI->setText(QString::fromStdString(outputString));
 
+    snprintf(outputString, sizeof(outputString), "%.0f", lossesCount);
+    lossesValueUI->setText(QString::fromStdString(outputString));
+
     snprintf(outputString, sizeof(outputString), "%.0f", currentBetValue);
     currentBetUI->setText(QString::fromStdString(outputString));
 
