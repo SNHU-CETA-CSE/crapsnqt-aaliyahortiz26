@@ -23,8 +23,8 @@ private:
     float winsCount;
     float lossesCount;
     float currentBankValue;
+    float currentBetValue;
     int rollValue;
-    void setupGame();
 
 public Q_SLOTS:
     void rollButtonClickedHandler();

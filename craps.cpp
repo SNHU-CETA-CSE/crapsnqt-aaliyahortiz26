@@ -19,7 +19,8 @@ CrapsMainWindow :: CrapsMainWindow(QMainWindow *parent):
         currentBankValue { 10000 },
         winsCount { 0 },
         lossesCount { 0 },
-        rollValue { 0 }
+        rollValue { 0 },
+        currentBetValue { 100 }
 
 {
     setupUi(this);
@@ -42,12 +43,17 @@ void CrapsMainWindow::updateUI() {
 
     snprintf(outputString, sizeof(outputString), "%.2f", currentBankValue);
     currentBankValueUI->setText(QString::fromStdString(outputString));
-    //winsValueUI->setText(QString::fromStdString(winsCount));
+
+    snprintf(outputString, sizeof(outputString), "%.0f", winsCount);
+    winsValueUI->setText(QString::fromStdString(outputString));
+
+    snprintf(outputString, sizeof(outputString), "%.0f", currentBetValue);
+    currentBetUI->setText(QString::fromStdString(outputString));
 
 }
 
 void CrapsMainWindow::rollButtonClickedHandler() {
-    printf("Roll button click\n");
+    printf("Roll button clicked\n");
     rollValue = die1.roll() + die2.roll();
     if (firstRoll){
         printf("PLaying first roll\n");
@@ -59,5 +65,6 @@ void CrapsMainWindow::rollButtonClickedHandler() {
     printStringRep();
     currentBankValue -= 100;
     winsCount += 1;
+    lossesCount += 1;
     updateUI();
 }
