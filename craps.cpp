@@ -44,7 +44,7 @@ void CrapsMainWindow::updateUI() {
     die1UI->setPixmap(QPixmap(QString::fromStdString(die1ImageName)));
     die2UI->setPixmap(QPixmap(QString::fromStdString(die2ImageName)));
     if (firstRoll) {
-        rollingForUI->setText(QString::fromStdString(""));
+        rollingForUI->setText(QString::fromStdString("")); //figure what is wrong with this
     }
     else {
         snprintf(outputString, sizeof(outputString), "%i", previousRoll);
