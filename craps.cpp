@@ -58,16 +58,36 @@ void CrapsMainWindow::updateUI() {
 void CrapsMainWindow::rollButtonClickedHandler() {
     printf("Roll button clicked\n");
     rollValue = die1.roll() + die2.roll();
+/*
     if (firstRoll){
-        printf("PLaying first roll\n");
-        firstRoll = false;
-    } else {
-        printf("Playing second roll\n");
         firstRoll = true;
+        printf("PLaying first roll\n");
+    } else {
+        firstRoll = false;
+        printf("Playing second roll\n");
+    }*/
+
+    if (firstRoll == true && rollValue == 7 || firstRoll == true && rollValue == 11){
+        printf("You won!\n");
+        winsCount += 1;
+    } else if (rollValue == 2 || rollValue == 3 || rollValue == 12){
+        printf("You lost.\n");
+        lossesCount += 1;
+    } else if(rollValue == 4 || rollValue == 5 || rollValue == 6 || rollValue == 8 || rollValue == 9 || rollValue == 10) {
+            printf("You get to roll again!\n");
+            previousRoll = rollValue;
+    } else if (rollValue = previousRoll){
+        printf("You win!\n");
+        winsCount += 1;
+    } else {
+        printf("You lose.\n");
+        lossesCount += 1;
     }
+
+
     printStringRep();
     currentBankValue -= 100;
-    winsCount += 1;
-    lossesCount += 1;
+    //winsCount += 1;
+    //lossesCount += 1;
     updateUI();
 }

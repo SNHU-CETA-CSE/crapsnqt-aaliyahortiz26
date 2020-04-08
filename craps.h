@@ -24,6 +24,7 @@ private:
     float lossesCount;
     float currentBankValue;
     float currentBetValue;
+    int previousRoll;
     int rollValue;
 
 public Q_SLOTS:
