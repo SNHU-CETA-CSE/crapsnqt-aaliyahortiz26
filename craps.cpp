@@ -61,14 +61,6 @@ void CrapsMainWindow::rollButtonClickedHandler() {
 
     previousRoll = rollValue;
 
-    /*if (firstRoll = true){
-        printf("PLaying first roll\n");
-    } else {
-        firstRoll = false;
-        printf("Playing second roll\n");
-    }
-
-*/
     if (firstRoll == true && rollValue == 7 || firstRoll == true && rollValue == 11){
         printf("You won!\n");
         currentBankValue += currentBetValue;
@@ -91,8 +83,5 @@ void CrapsMainWindow::rollButtonClickedHandler() {
     }
 
     printStringRep();
-    //currentBankValue -= 100;
-    //winsCount += 1;
-    //lossesCount += 1;
     updateUI();
 }
