@@ -79,18 +79,15 @@ void CrapsMainWindow::rollButtonClickedHandler() {
                 currentBankValue -= currentBetValue;
                 lossesCount += 1;
                 break;
-            case 4:
+            case 4: //check these numbers again for the repeats then this is done :)
             case 5:
             case 6:
             case 8:
             case 9:
             case 10:
-                printf("You get to roll again!\n");
-                if (rollValue == 4, 5, 6, 8, 9, 10){
                     printf("You lost!\n");
                     currentBankValue -= currentBetValue;
                     lossesCount += 1;
-                };
                 break;
             default:
                 currentBankValue -= currentBetValue;
@@ -101,7 +98,6 @@ void CrapsMainWindow::rollButtonClickedHandler() {
     }
 
 /*
-
     if (firstRoll == true && rollValue == 7 || firstRoll == true && rollValue == 11){
         printf("You won!\n");
         currentBankValue += currentBetValue;
